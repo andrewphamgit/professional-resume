@@ -1,0 +1,9 @@
+# Default ignored files
+.idea
+
+*.aux
+*.log
+*.out
+
+# private
+./avatar.jpg
