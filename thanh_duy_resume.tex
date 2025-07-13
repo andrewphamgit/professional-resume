@@ -3,7 +3,7 @@
 % Author : Pham Thanh Duy
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 % ------------------- PACKAGES -----------------------
 \usepackage{latexsym}
@@ -69,21 +69,27 @@
         \textbf{\LARGE#1} & \normalsize#2 \\
         \vspace{5pt}
         \textbf{\textit{\small#3}} & \textit{\normalsize #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-10pt}
 }
 
-\newcommand{\resumeProfile}[2]{
+\newcommand{\resumeProfile}[3]{
     \begin{center}
         \begin{minipage}[c]{0.2\textwidth}
             \centering
-                \begin{tikzpicture}
+            \begin{tikzpicture}
                 \clip (0,0) circle (1.5cm);
                 \node at (0,0) {\includegraphics[width=3cm,height=3cm]{#1}};
             \end{tikzpicture}
         \end{minipage}
         \hfill
         \begin{minipage}[c]{0.75\textwidth}
-            {#2}
+            \setlength{\parskip}{5pt}
+            \begin{flushleft}
+                \noindent {#2}
+
+                \vspace{10pt}
+                \noindent {#3}
+            \end{flushleft}
         \end{minipage}
     \end{center}
 }
@@ -128,16 +134,12 @@
 %-----------PROFILE-----------------
 \section{Profile}
 \resumeProfile{avatar.jpg}
-    {
-        I am a Full-Stack Developer with over 4 years of experience in building large-scale software systems, specializing in Microservices architecture, Cloud technologies, and Java/Spring frameworks.
-
-        \vspace{10pt}
-        I help provide optimized and scalable solutions, analyze root causes of problems, and adopt new technologies to solve complex challenges.
-    }
+    {I am a Full-Stack Developer with over 4 years of experience in building and maintaining large-scale software systems. Specialized in Microservices architecture, Cloud technologies, and the Java/Spring ecosystem.}
+    {Proven ability to deliver scalable and optimized solutions, performing root cause analysis, and quickly adapt to new technologies to address complex technical challenges.}
 
 
 %--------SKILLS------------
-\section{Skills}\vspace{-6pt}
+\section{Skills}\vspace{-4pt}
     \resumeSubHeadingListStart
         \resumeSubItem{Languages}
             {Java, JavaScript or TypeScript}
@@ -146,58 +148,47 @@
         \resumeSubItem{Front-End}
             {ReactJS, VueJS, HTML5, CSS3, SASS/SCSS}
         \resumeSubItem{Databases}
-            {MySQL, SQL Server, MongoDB, Redis, Elastic Search}
+            {MySQL, SQL Server, MongoDB, Redis, Elasticsearch}
         \resumeSubItem{Technologies}
-            {Microservices, Kafka, REST/gRPC, Docker, AWS (EC2, S3, Lambda), CI/CD (GitLab)}
+            {Microservices, Kafka, REST/gRPC, Docker, AWS (EC2, S3, Lambda), CI/CD (GitLab CI)}
         \resumeSubItem{Tools}
             {Jira, Confluence, GitHub/GitLab, SonarQube}
         \resumeSubItem{Soft Skills}
-            {Project Management, Adaptability, Problem – solving, Critical Thinking, Teamwork, Time Management}
+            {Project Management, Problem Solving, Critical Thinking, Teamwork, Adaptability, Time Management}
     \resumeSubHeadingListEnd
 
 
 %-----------EXPERIENCE-----------------
-\section{Experience}\vspace{-6pt}
+\section{Experience}\vspace{-4pt}
     \resumeSubHeadingListStart
-
         \resumeSubheading
             {Code88 Company}{Ho Chi Minh city}
             {Middle Software Engineer}{Feb 2021 -- Present}
         \resumeItemListStart
-            \resumeItem{System Migration}
-                {Migrated the system from java 8 to java 17 and design from Monolithic module to Microservice modules.}
-            \resumeItem{Security}
-                {Developed REST APIs integrated with Spring Security and JWT, ensure security for the application.}
-            \resumeItem{Export Excel}
-                {Implemented enhanced source code to export data with over 1 million records to Excel using thread pools along with Store S3 to help the system avoid Out of memory.}
-            \resumeItem{Notifications}
-                {Decouple email system by using message queue to build email delivery service. Improve workflow, increase efficiency, and focus on handling only the core business requirements.}
-            \resumeItem{Caching}
-                {Implement Redis integrated cache management source code to fetch information, reducing load on the database.}
-            \resumeItem{Logging}
-                {Build system logs using AOP to monitor applications efficiently.}
-            \resumeItem{Swagger Management}
-                {Write source code that makes it easy to manage API documentation files and build swagger files based on API documentation files for Open API.}
+            \resumeItem{System Architecture and Migration}
+                {Responsible for migrating the system from Java 8 to Java 17, and refactoring the architecture from a Monolithic architecture to Microservices to make the system more flexible and easier to maintain.}
+            \resumeItem{Application Security}
+                {Developed and integrated secure RESTful APIs using Spring Security and JWT to protect critical resources and ensure secure user authentication and authorization.}
+            \resumeItem{High-Volume Data Processing}
+                {Engineered a multithreaded solution to export over 1 million records to Excel, storing the output in AWS S3 to optimize performance and prevent out-of-memory issues.}
+            \resumeItem{Asynchronous Communication}
+                {Designed and implemented a decoupled email delivery service using Kafka, streamlining communication workflows and reducing load on the core services.}
+            \resumeItem{Caching Strategy}
+                {Integrated Redis for efficient cache management, significantly reducing database load and improving response times for frequently accessed data.}
+            \resumeItem{Logging and Monitoring}
+                {Developed an AOP-based logging system for comprehensive application monitoring, supporting rapid debugging and incident resolution.}
+            \resumeItem{API Documentation Automation}
+                {Develop an API documentation file management solution to automate Swagger/OpenAPI generation from endpoint description documents, supporting a rapid and standardized development process.}
         \resumeItemListEnd
-
-% --------Multiple Positions Heading------------
-%     \resumeSubSubheading
-%       {Software Engineer I}{Oct 2014 -- Sep 2016}
-%       \resumeItemListStart
-%         \resumeItem{Apache Beam}
-%           {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%       \resumeItemListEnd
-%-------------------------------------------
-
     \resumeSubHeadingListEnd
 
 
 %-----------EDUCATION-----------------
-\section{Education}\vspace{-6pt}
+\section{Education}\vspace{-4pt}
     \resumeSubHeadingListStart
         \resumeSubheading
             {Industrial University of HCM city}{}
-            {Software Engineer}{Aug 2016 -- Oct 2020}
+            {Software Engineer}{Sep 2016 -- Oct 2020}
     \resumeSubHeadingListEnd
 
 
