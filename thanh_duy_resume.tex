@@ -17,7 +17,6 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{float}
 \usepackage{tikz}
@@ -48,7 +47,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-    \vspace{2pt}\scshape\Large\raggedright
+    \vspace{2pt}\scshape\bfseries\Large\raggedright
 }{}{0em}{}[\color{black}\titlerule \vspace{2pt}]
 
 % Ensure that generate PDF is machine readable/ATS parsable
@@ -72,25 +71,17 @@
     \end{tabular*}\vspace{-10pt}
 }
 
-\newcommand{\resumeProfile}[3]{
+\newcommand{\resumeProfile}[2]{
     \begin{center}
-        \begin{minipage}[c]{0.2\textwidth}
-            \centering
-            \begin{tikzpicture}
-                \clip (0,0) circle (1.5cm);
-                \node at (0,0) {\includegraphics[width=3cm,height=3cm]{#1}};
-            \end{tikzpicture}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[c]{0.75\textwidth}
+        \begin{minipage}[c]\textwidth
             \setlength{\parskip}{5pt}
-            \begin{flushleft}
-                \noindent {#2}
+             \begin{flushleft}
+                  \noindent {#1}
 
-                \vspace{10pt}
-                \noindent {#3}
-            \end{flushleft}
-        \end{minipage}
+                  \vspace{10pt}
+                  \noindent {#2}
+             \end{flushleft}
+         \end{minipage}
     \end{center}
 }
 
@@ -127,46 +118,46 @@
 
 %----------HEADING-----------------
 \resumeHeading
-    {Pham Thanh Duy} {Email: \href{mailto:thanhduysofeng@gmail.com}thanhduysofeng@gmail.com}
+    {Pham Thanh Duy} {\href{mailto:thanhduysofeng@gmail.com}thanhduysofeng@gmail.com \textbar{} \href{https://www.linkedin.com/in/tduy-dev}{LinkedIn}}
     {Full-stack Developer} {Mobile: \href{tel:+84869997242}+84-869997242}
 
 
 %-----------PROFILE-----------------
-\section{Profile}
-\resumeProfile{avatar.jpg}
+\section{profile}
+\resumeProfile
     {I am a Full-Stack Developer with over 4 years of experience in building and maintaining large-scale software systems. Specialized in Microservices architecture, Cloud technologies, and the Java/Spring ecosystem.}
     {Proven ability to deliver scalable and optimized solutions, performing root cause analysis, and quickly adapt to new technologies to address complex technical challenges.}
 
 
 %--------SKILLS------------
-\section{Skills}\vspace{-4pt}
+\section{skills}\vspace{-4pt}
     \resumeSubHeadingListStart
-        \resumeSubItem{Languages}
-            {Java, JavaScript or TypeScript}
-        \resumeSubItem{Back-End}
-            {Spring Boot, Spring Security, Mockito, NodeJS}
-        \resumeSubItem{Front-End}
-            {ReactJS, VueJS, HTML5, CSS3, SASS/SCSS}
-        \resumeSubItem{Databases}
-            {MySQL, SQL Server, MongoDB, Redis, Elasticsearch}
+        \resumeSubItem{Programing Languages}
+            {Java, JavaScript, TypeScript, HTML5, CSS3}
+        \resumeSubItem{Framework}
+            {Spring Boot, Spring Security, ReactJS, VueJS, NodeJS}
         \resumeSubItem{Technologies}
-            {Microservices, Kafka, REST/gRPC, Docker, AWS (EC2, S3, Lambda), CI/CD (GitLab CI)}
-        \resumeSubItem{Tools}
-            {Jira, Confluence, GitHub/GitLab, SonarQube}
+            {SQL (MySQL, SQL Server), MongoDB, Redis, Elasticsearch, Kafka, Docker, AWS (EC2, S3, Lambda)}
+        \resumeSubItem{Engineering Practices}
+            {Microservices, REST/gRPC, Mockito (Unit Testing), GitHub/GitLab (CI/CD), SonarQube (Code Quality),...}
         \resumeSubItem{Soft Skills}
             {Project Management, Problem Solving, Critical Thinking, Teamwork, Adaptability, Time Management}
     \resumeSubHeadingListEnd
 
 
 %-----------EXPERIENCE-----------------
-\section{Experience}\vspace{-4pt}
+\section{experience}\vspace{-4pt}
     \resumeSubHeadingListStart
         \resumeSubheading
             {Code88 Company}{Ho Chi Minh city}
-            {Middle Software Engineer}{Feb 2021 -- Present}
+            {Middle Software Engineer}{Spring 2021 -- Present}
         \resumeItemListStart
+            \resumeItem{Building Application Structure}
+                {Create an admin web application (ReactJS) designed to manage customers registered through the agency, rather than on the website themself. The system provides settings for daily player management and reporting.}
+            \resumeItem{State Management Optimization}
+                {Implemented efficient front-end state management strategy using React’s Context API and memoization (useState, useMemo, useCallback,...) to avoid unnecessary re-renders. Improved rendering performance by over 40\% in complex components dealing with large datasets. Applied lazy loading and data normalization techniques to optimize data flow and responsiveness.}
             \resumeItem{System Architecture and Migration}
-                {Responsible for migrating the system from Java 8 to Java 17, and refactoring the architecture from a Monolithic architecture to Microservices to make the system more flexible and easier to maintain.}
+                {Responsible for migrating the system from Java 8 to Java 17, and refactoring the architecture from a Monolithic architecture (Spring MVC) to Microservices (Spring Boot) to make the system more flexible and easier to maintain.}
             \resumeItem{Application Security}
                 {Developed and integrated secure RESTful APIs using Spring Security and JWT to protect critical resources and ensure secure user authentication and authorization.}
             \resumeItem{High-Volume Data Processing}
@@ -184,7 +175,7 @@
 
 
 %-----------EDUCATION-----------------
-\section{Education}\vspace{-4pt}
+\section{education}\vspace{-4pt}
     \resumeSubHeadingListStart
         \resumeSubheading
             {Industrial University of HCM city}{}
